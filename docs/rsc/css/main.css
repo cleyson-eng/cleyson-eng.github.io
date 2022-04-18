@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "aldo_the_apache";
+  src: url("/rsc/txt/AldotheApache.ttf") format("truetype");
+}
+#logo {
+  font-family: "aldo_the_apache";
+  font-size: 2.3em;
+  padding: 0.1em 0.6em;
+  transition: color 0.5s ease-out;
+}
+
+#bar {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  position: sticky;
+  padding-top: 0.4em;
+  top: -2px;
+}
+
+#bar[stuck] {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4666666667);
+}
+
+.twhite #logo {
+  color: #ce6d13;
+}
+.twhite #bar {
+  background-color: white;
+  backdrop-filter: blur(0);
+}
+.twhite #bar[stuck] {
+  background-color: rgba(255, 255, 255, 0.6431372549);
+  backdrop-filter: blur(3px);
+}
+
+.tdark #logo {
+  color: #d3a646;
+}
+.tdark #bar {
+  background-color: #383838;
+  backdrop-filter: blur(0);
+}
+.tdark #bar[stuck] {
+  background-color: rgba(56, 56, 56, 0.6431372549);
+  backdrop-filter: blur(3px);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-size: cover;
+}
+
+.twhite {
+  color: black;
+}
+
+.tdark {
+  color: white;
+}
+
+body.twhite {
+  background-color: #dadada;
+}
+
+body.tdark {
+  background-color: #141414;
+}
+
+/*# sourceMappingURL=main.css.map */

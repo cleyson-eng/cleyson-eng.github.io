@@ -1,0 +1,105 @@
+/* body classes:
+
+theme:
+	so_t_dark
+	so_t_light
+graphics:
+	so_gl_min
+	so_gl_mid
+	so_gl_max
+bar style:
+	so_bs_minimal
+	so_bs_bar
+	so_bs_dock
+so style:
+	so_ss_desktop
+	so_ss_mobile
+	so_ss_tablet
+
+
+*/
+
+/* Scales / common */
+html,body,#sows, {
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+}
+#sows,#soapp,#soapp_evervisible,#so_ctxmenu,#sobar {
+	position:fixed;
+	top:0;
+	left:0;
+}
+#sobar {
+	width:100%;
+	height:2.2em;
+}
+#sows {
+	overflow-y:auto;
+}
+#sows #content {
+	padding: 3.5em 2em 2em 2em;
+}
+#sows #fixed {
+	top:0;
+	left:0;
+	position:absolute;
+}
+* {
+	box-sizing:border-box;
+}
+#sobar .b_icon {
+	background-image: url(/img/cfavicon-64.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	width:2em;
+	height:2em;
+	margin:0.1em 1.5em;
+}
+
+/* Themed visual */
+.so_t_dark {
+	background-color:#222;
+	color:white;
+}
+
+/*sobar*/
+.so_t_dark.so_gl_min {
+	#sobar {
+		background-color: #111;
+	}
+}
+.so_t_dark.so_gl_mid {
+	#sobar {
+		background-color: rgba(20,20,20,0.65);
+		backdrop-filter: blur(10px);
+	}
+}
+.so_t_dark.so_gl_max {
+	#sobar {
+		background-color: rgba(20,20,20,0.65);
+		backdrop-filter: blur(20px);
+	}
+}
+
+.so_t_light.so_gl_min {
+	#sobar {
+		background-color: #DDD;
+		border-bottom: 1px solid #777;
+	}
+}
+.so_t_light.so_gl_mid {
+	#sobar {
+		background-color: rgba(255,255,255,0.65);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid #777;
+	}
+}
+.so_t_light.so_gl_max {
+	#sobar {
+		background-color: rgba(255,255,255,0.65);
+		backdrop-filter: blur(20px);
+		box-shadow: 0 0 3px 0 rgba(50,50,50,0.3);
+	}
+}

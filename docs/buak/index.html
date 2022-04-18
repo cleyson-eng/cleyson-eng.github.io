@@ -1,0 +1,213 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			html,body,canvas {
+				width:100%;
+				height:100%;
+				margin:0;
+				padding:0;
+			}
+			div {
+				position:fixed;
+				left:0;
+				top:0;
+				color:white;
+				text-shadow: 0px 0px 2px black;
+				border-bottom: 1px solid white;
+				border-left: 1px solid white;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas>
+			
+		</canvas>
+		<div></div>
+		<script>
+let w, h, cv, c;
+const coords_out = document.body.querySelector('div');
+
+var xp = 0;
+var yp = 0;
+var zp = 1;
+var gg = 100;
+
+var points = [];
+(()=>{
+	//#type;x;y;... where type = a(lert)|e(rror)|i(nfo)|f(avorite)
+	let iurl = document.URL.indexOf('#');
+	if (iurl <= 0) return;
+	let frags = document.URL.substring(iurl+1).split(';');
+	try {
+		for (let i = 0; i + 2 < frags.length; i+=3) {
+			let np = {
+				type:frags[i],
+				x:parseInt(frags[i+1]),
+				y:-parseInt(frags[i+2]),
+			};
+			if (isNaN(np.x) || isNaN(np.y) || np.type.length != 1 || "aeif".indexOf(np.type) < 0) throw 'invalid';
+			points.push(np);
+		}
+	} catch (e){}
+})();
+
+const pradius = 3;
+const pradiusX = 6;
+const pcolors = {
+	'a':'orange',
+	'e':'red',
+	'i':'blue',
+	'f':'yellow'
+}
+function render () {
+	c.fillStyle = "#61737b";
+	c.fillRect(0, 0, w, h);
+	if (zp >= 1.5) {
+		let ii = 1;
+		for (let iy = 0; iy < 8; iy++) {
+			for (let ix = 0; ix < 8; ix++) {
+				drawImage(ii, (ix*500)-2000,(iy*500)-2000,500,500);
+				ii++;
+			}
+		}
+	} else
+		drawImage(0, -2000,-2000,4000,4000);
+	drawGrid();
+
+	c.strokeStyle = 'black';
+	for (let i = 0; i < points.length; i++) {
+		const p = points[i];
+		const ps = c2p(p.x,p.y);
+		if (ps.x > -pradius && ps.y > -pradius && ps.x < w+pradius && ps.y < h+pradius) {
+			c.beginPath();
+			c.moveTo(ps.x-pradiusX, ps.y-pradiusX);
+			c.lineTo(ps.x+pradiusX, ps.y+pradiusX);
+			c.stroke();
+			c.beginPath();
+			c.moveTo(ps.x-pradiusX, ps.y+pradiusX);
+			c.lineTo(ps.x+pradiusX, ps.y-pradiusX);
+			c.stroke();
+			c.fillStyle = pcolors[p.type];
+			c.beginPath();
+			c.arc(ps.x, ps.y, pradius, 0, 2 * Math.PI);
+			c.fill();
+			c.stroke();
+		}
+	}
+}
+function c2p(x,y) {
+	x = (x-xp)*zp + w/2;
+	y = (y-yp)*zp + h/2;
+	return {x,y};
+}
+function p2c(x,y) {
+	x = ((x - w/2)/zp)+xp;
+	y = ((y - h/2)/zp)+yp;
+	return {x,y};
+}
+function pRest(x, mod) {
+	let m = x%mod;
+	if (m < 0) m+=mod;
+	return m;
+}
+let img_cache = ['./m1.png'];
+for (let icy = 1; icy <= 8; icy++) {
+	for (let icx = 1; icx <= 8; icx++) {
+		img_cache.push(`./m2/row-${icy}-column-${icx}.png`)
+	}
+}
+function drawImage(imgid,ix,iy,iw,ih) {
+	let t = c2p(ix,iy);
+	ix = t.x;
+	iy = t.y;
+	iw*=zp;
+	ih*=zp;
+	if (ix > w || iy > h || (ix+iw) < 0 || (iy+ih) < 0) return;
+	let img = img_cache[imgid];
+	if (typeof img == 'string') {
+		let t = new Image();
+		t.src = img;
+		t.onload = ()=>render();
+		img_cache[imgid] = t;
+		img = t;
+	}
+	c.drawImage(img, ix, iy, iw, ih);
+}
+function drawGrid() {
+	q1c = p2c(0,0);
+	q2c = p2c(w,h);
+	c.strokeStyle = '#75726e60';
+	
+	let xk = q1c.x + (gg - pRest(q1c.x, gg));
+	let yk = q1c.y + (gg - pRest(q1c.y, gg));
+	for (; xk < q2c.x; xk += gg) {
+		let cx = c2p(xk,0).x;
+		c.beginPath();
+		c.moveTo(cx, 0);
+		c.lineTo(cx, h);
+		c.stroke();
+	}
+	for (; yk < q2c.y; yk += gg) {
+		let cy = c2p(0,yk).y;
+		c.beginPath();
+		c.moveTo(0,cy);
+		c.lineTo(w,cy);
+		c.stroke();
+	}
+}
+function coordsOut (xy) {
+	coords_out.innerText = `${Math.round(xy.x)};${Math.round(-xy.y)}`;
+}
+
+w = window.innerWidth;
+h = window.innerHeight;
+cv = document.body.querySelector('canvas');
+cv.width = w;
+cv.height = h;
+c = cv.getContext("2d");
+c.imageSmoothingQuality = "high";
+console.log('started rendering');
+render();
+
+(()=>{
+	let mm = false;
+	document.onmousedown = (e)=>{
+		mm = true;
+	}
+	document.onmousemove = (e)=>{
+		if (mm) {
+			xp -= e.movementX/zp;
+			yp -= e.movementY/zp;
+			render();
+		} else
+			coordsOut(p2c(e.clientX,e.clientY));
+		coords_out.style.top = (e.clientY-coords_out.clientHeight)+'px';
+		coords_out.style.left = (e.clientX)+'px';
+	}
+	document.onmouseup = (e)=>{
+		mm = false;
+	}
+	const zoomLevels = [0.1,0.15,0.2,0.3,0.4,0.5,0.66,0.75,1,1.25, 1.5, 1.75, 2];
+	const zoomgg = [500,500,500,500,250,250,250,250,100,100,100,100,100];
+	document.onwheel = (e)=>{
+		let current = zoomLevels.findIndex((x)=>x==zp);
+		if (e.deltaY>0)
+			current--;
+		else
+			current++;
+		opos = p2c(e.clientX, e.clientY);
+		let ni = Math.max(Math.min(zoomLevels.length-1, current),0);
+		zp = zoomLevels[ni];
+		gg = zoomgg[ni];
+		npos = p2c(e.clientX, e.clientY);
+
+		xp -= npos.x - opos.x;
+		yp -= npos.y - opos.y;
+		render();
+	}
+
+})();
+		</script>
+	</body>
+</html>

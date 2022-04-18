@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "amd",
+    "outDir": "../ts-out",
+    "rootDir": "./",
+    "strict": true,
+    "moduleResolution": "classic",
+    "esModuleInterop": true,
+    "skipLibCheck": false,
+    "forceConsistentCasingInFileNames": true
+  },
+}
