@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "aldo_the_apache";
+  src: url("/rsc/txt/AldotheApache.ttf") format("truetype");
+}
+#logo {
+  font-family: "aldo_the_apache";
+  font-size: 2.3em;
+  padding: 0.1em 0.6em;
+  transition: color 0.5s ease-out;
+}
+
+header {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  position: sticky;
+  padding-top: 0.4em;
+  top: -2px;
+}
+
+header[stuck] {
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4666666667);
+}
+
+.twhite #logo {
+  color: #ce6d13;
+}
+.twhite header {
+  background-color: white;
+  backdrop-filter: blur(0);
+}
+.twhite header[stuck] {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+.tdark #logo {
+  color: #d3a646;
+}
+.tdark header {
+  background-color: #383838;
+  backdrop-filter: blur(0);
+}
+.tdark header[stuck] {
+  background-color: rgba(56, 56, 56, 0.7);
+  backdrop-filter: blur(3px);
+}
+
+footer {
+  box-shadow: 0 -2px 3px rgba(0, 0, 0, 0.4666666667);
+  width: 100%;
+  overflow-x: hidden;
+}
+footer .fcol {
+  width: 100%;
+  padding: 0.5em;
+  display: inline-block;
+}
+footer .aut {
+  text-decoration: none;
+}
+
+@media (width >= 450px) {
+  footer .fcol {
+    padding: 0.5em 3em;
+  }
+}
+@media (width < 600px) {
+  footer .fcol {
+    text-align: center;
+  }
+}
+@media (width >= 600px) {
+  footer .fcol {
+    width: 50%;
+  }
+}
+@media (width > 1000px) {
+  footer {
+    padding: 0 calc(50% - 400px);
+  }
+  footer .fcol:nth-child(1) {
+    width: 65%;
+  }
+  footer .fcol:nth-child(2) {
+    width: 35%;
+  }
+}
+.contato {
+  display: inline-block;
+  border-radius: 0.5em;
+  width: 4em;
+  height: 4em;
+  margin: 0 0.5em;
+  background-size: 2.7em 2.7em;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0px 3px 2px rgba(0, 0, 0, 0.4666666667);
+}
+
+.twhite footer {
+  background-color: white;
+}
+.twhite .aut {
+  color: #ce6d13;
+}
+.twhite .contato {
+  background-color: #dadada;
+}
+
+.tdark footer {
+  background-color: #383838;
+}
+.tdark .aut {
+  color: #d3a646;
+}
+.tdark .contato {
+  background-color: #141414;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.twhite::-webkit-scrollbar-track {
+  background: #dadada;
+}
+
+.twhite::-webkit-scrollbar-thumb {
+  background: rgb(243.8533333333, 186.9466666667, 134.1466666667);
+}
+
+.twhite::-webkit-scrollbar-thumb:hover {
+  background: rgb(239.5466666667, 160.6533333333, 87.4533333333);
+}
+
+.tdark::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+.tdark::-webkit-scrollbar-thumb {
+  background: rgb(103.4061135371, 78.2532751092, 24.5938864629);
+}
+
+.tdark::-webkit-scrollbar-thumb:hover {
+  background: rgb(62.2052401747, 47.0742358079, 14.7947598253);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body.twhite {
+  background-color: #dadada;
+}
+
+body.tdark {
+  background-color: #141414;
+}
+
+.popup {
+  position: fixed;
+  padding: 0.3em 0.6em;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0px 4px 2px rgba(0, 0, 0, 0.7333333333);
+  text-align: center;
+  opacity: 1;
+  transition: all 0.25s;
+  border-radius: 1em;
+  transform: translate(-50%, -50%) scale(1, 1);
+}
+.popup h4, .popup p {
+  margin: 0;
+}
+
+.popup.hidden {
+  opacity: 0;
+  transform: translate(-25%, -50%) scale(0.5, 0.5);
+}
+
+.twhite {
+  color: black;
+}
+.twhite .popup {
+  background-color: rgba(218, 218, 218, 0.5);
+}
+
+.tdark {
+  color: white;
+}
+.tdark .popup {
+  background-color: rgba(20, 20, 20, 0.5);
+}
+
+/*# sourceMappingURL=common.css.map */
