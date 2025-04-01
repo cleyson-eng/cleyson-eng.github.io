@@ -1,0 +1,45 @@
+.appmain .name {
+  min-height: 1.2em;
+  background-position: left;
+  background-size: 1.2em 1.2em;
+  background-repeat: no-repeat;
+  background-image: url("/app/wcalc/w.png");
+  padding: 0 1.2em;
+  font-size: 2em;
+}
+.appmain .appvdiv {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4666666667);
+  padding: 0.3em 1.5em;
+}
+.appmain input[type=number] {
+  border-radius: 4px;
+  max-width: 5em;
+  padding: 0.1em 0.4em;
+  margin: 0 0.4em;
+}
+.appmain input[type=number]::-webkit-outer-spin-button, .appmain input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.twhite .appmain input[type=number] {
+  background-color: #f3f3f3;
+  border: 1px solid #a5a5a5;
+  color: #222;
+}
+.twhite .appmain input[type=number]:focus {
+  outline: none;
+  border: 1px solid #3f8cd9;
+}
+
+.tdark .appmain input[type=number] {
+  background-color: #2e2e2e;
+  border: 1px solid #1d1d1d;
+  color: #ddd;
+}
+.tdark .appmain input[type=number]:focus {
+  outline: none;
+  border: 1px solid #7796b5;
+}
+
+/*# sourceMappingURL=index.css.map */

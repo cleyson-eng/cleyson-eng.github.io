@@ -1,3 +1,222 @@
+body {
+  font-family: "Trebuchet MS", Arial;
+}
+
+a {
+  text-decoration: none;
+}
+
+hr {
+  background: none;
+  border: none;
+}
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 0.25em 0.8em;
+}
+
+input {
+  border-radius: 0.4em;
+}
+
+input[type=number] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=checkbox] {
+  appearance: none;
+  width: 2.4em;
+  height: 1.2em;
+  border-radius: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+input[type=checkbox]::after {
+  width: 0.6em;
+  height: 0.6em;
+  margin: calc(0.3em - 1px);
+  border-radius: 1.2em;
+  display: block;
+  content: "";
+  transform: translateX(0);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+input[type=checkbox]:checked::after {
+  transform: translateX(1.2em);
+}
+
+input[type=radio] {
+  appearance: none;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 1.2em;
+}
+
+input[type=radio]::after {
+  width: 0.6em;
+  height: 0.6em;
+  margin: calc(0.3em - 1px);
+  border-radius: 1.2em;
+  display: block;
+  content: "";
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+fieldset {
+  border: none;
+}
+
+.twhite h1, .twhite h2, .twhite h3, .twhite h4, .twhite h5, .twhite h6 {
+  color: #101010;
+}
+.twhite a {
+  color: #3f8cd9;
+}
+.twhite a:hover {
+  color: rgb(25.1956521739, 76.25, 127.3043478261);
+}
+.twhite tr:hover, .twhite input:hover, .twhite button:hover {
+  outline: 1px dashed #3f8cd9;
+}
+.twhite *:focus {
+  outline: 1px solid #3f8cd9;
+}
+.twhite hr {
+  border-top: 2px solid #dadada;
+}
+.twhite th {
+  border-bottom: 2px solid #777777;
+}
+.twhite td:nth-child(even) {
+  background-color: #ececec;
+}
+.twhite input {
+  background-color: #ececec;
+  border: 1px solid #777777;
+  color: #101010;
+}
+.twhite input:focus {
+  outline: none;
+  border-color: #3f8cd9;
+}
+.twhite input[type=submit]:focus, .twhite input[type=button]:focus {
+  outline: 1px solid #3f8cd9;
+}
+.twhite input[type=checkbox]::after {
+  background-color: #777777;
+}
+.twhite input[type=checkbox]:checked {
+  background-color: #6cad3d;
+  border-color: transparent;
+}
+.twhite input[type=checkbox]:checked::after {
+  background-color: #ffffff;
+}
+.twhite input[type=radio]:checked::after {
+  background-color: #6cad3d;
+}
+.twhite input[type=checkbox]:checked:focus {
+  outline: 1px solid #3f8cd9;
+}
+
+.tdark h1, .tdark h2, .tdark h3, .tdark h4, .tdark h5, .tdark h6 {
+  color: #F0F0F0;
+}
+.tdark a {
+  color: #95b6da;
+}
+.tdark a:hover {
+  color: rgb(186.8041958042, 208.034965035, 231.1958041958);
+}
+.tdark tr:hover, .tdark input:hover, .tdark button:hover {
+  outline: 1px dashed #95b6da;
+}
+.tdark *:focus {
+  outline: 1px solid #95b6da;
+}
+.tdark hr {
+  border-top: 2px solid #141414;
+}
+.tdark th {
+  border-bottom: 2px solid #949494;
+}
+.tdark td:nth-child(even) {
+  background-color: #313131;
+}
+.tdark input {
+  background-color: #313131;
+  border: 1px solid #949494;
+  color: #F0F0F0;
+}
+.tdark input:focus {
+  outline: none;
+  border-color: #95b6da;
+}
+.tdark input[type=submit]:focus, .tdark input[type=button]:focus {
+  outline: 1px solid #95b6da;
+}
+.tdark input[type=checkbox]::after {
+  background-color: #949494;
+}
+.tdark input[type=checkbox]:checked {
+  background-color: #96d46a;
+  border-color: transparent;
+}
+.tdark input[type=checkbox]:checked::after {
+  background-color: #383838;
+}
+.tdark input[type=radio]:checked::after {
+  background-color: #96d46a;
+}
+.tdark input[type=checkbox]:checked:focus {
+  outline: 1px solid #95b6da;
+}
+
+button, input[type=submit], input[type=button] {
+  appearance: none;
+  border-radius: 0.4em;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s;
+  margin: 0 0.1em;
+}
+
+button:active, input[type=submit]:active, input[type=button]:active {
+  transform: translateY(2px);
+}
+
+.twhite button, .twhite input[type=submit], .twhite input[type=button] {
+  background-color: rgb(234.6, 234.6, 234.6);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8), 0 2px rgb(191.25, 191.25, 191.25);
+  color: #202127;
+}
+.twhite button:active, .twhite input[type=submit]:active, .twhite input[type=button]:active {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8), 0 0 rgb(191.25, 191.25, 191.25);
+}
+
+.tdark button, .tdark input[type=submit], .tdark input[type=button] {
+  background-color: rgb(76.4, 76.4, 76.4);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8), 0 2px rgb(17.75, 17.75, 17.75);
+  color: #eeebe7;
+}
+.tdark button:active, .tdark input[type=submit]:active, .tdark input[type=button]:active {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8), 0 0 rgb(17.75, 17.75, 17.75);
+}
+
 @font-face {
   font-family: "aldo_the_apache";
   src: url("/rsc/txt/AldotheApache.ttf") format("truetype");
@@ -7,6 +226,9 @@
   font-size: 2.3em;
   padding: 0.1em 0.6em;
   transition: color 0.5s ease-out;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 header {
@@ -26,7 +248,7 @@ header[stuck] {
   color: #ce6d13;
 }
 .twhite header {
-  background-color: white;
+  background-color: #ffffff;
   backdrop-filter: blur(0);
 }
 .twhite header[stuck] {
@@ -99,7 +321,7 @@ footer .aut {
 }
 
 .twhite footer {
-  background-color: white;
+  background-color: #ffffff;
 }
 .twhite .aut {
   color: #ce6d13;
@@ -152,6 +374,29 @@ footer .aut {
   background: rgb(62.2052401747, 47.0742358079, 14.7947598253);
 }
 
+.appmain {
+  border: 1px solid rgba(0, 0, 0, 0.4666666667);
+}
+
+.appmain.app500 {
+  margin: 1em calc(50% - 250px);
+  width: 500px;
+}
+
+@media (width < 500px) {
+  .appmain.app500 {
+    margin: 0 0;
+    width: 100%;
+  }
+}
+.twhite .appmain {
+  background-color: #ffffff;
+}
+
+.tdark .appmain {
+  background-color: #383838;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -159,6 +404,16 @@ footer .aut {
 html, body {
   margin: 0;
   padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 body.twhite {
@@ -190,14 +445,14 @@ body.tdark {
 }
 
 .twhite {
-  color: black;
+  color: #303030;
 }
 .twhite .popup {
   background-color: rgba(218, 218, 218, 0.5);
 }
 
 .tdark {
-  color: white;
+  color: #D0D0D0;
 }
 .tdark .popup {
   background-color: rgba(20, 20, 20, 0.5);
