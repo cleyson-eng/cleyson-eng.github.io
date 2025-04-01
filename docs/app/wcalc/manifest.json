@@ -1,0 +1,35 @@
+{
+	"short_name": "WCalc",
+	"name": "Weight Calculator",
+	"icons": [
+		{
+			"src": "/app/wcalc/w.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "/app/wcalc/w144.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "/app/wcalc/sdesktop.png",
+			"sizes": "640x320",
+			"type": "image/png",
+			"form_factor": "wide",
+			"label": "Application"
+		},
+		{
+			"src": "/app/wcalc/smobile.png",
+			"sizes": "320x640",
+			"type": "image/png",
+			"form_factor": "narrow",
+			"label": "Application"
+		}
+	],
+	"start_url": "/app/wcalc",
+	"display": "standalone",
+	"theme_color": "#5973e5"
+}
