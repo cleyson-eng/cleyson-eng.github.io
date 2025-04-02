@@ -27,5 +27,8 @@
     display: none;
   }
 }
+body {
+  overscroll-behavior: contain;
+}
 
 /*# sourceMappingURL=index.css.map */
