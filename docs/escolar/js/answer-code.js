@@ -1,0 +1,1 @@
+"use strict";import{javascript as t}from"@codemirror/lang-javascript";import{EditorView as e,basicSetup as o}from"codemirror";addEventListener("load",()=>{const r=new e({doc:"Start document",parent:document.body.querySelector("div.appmain"),extensions:[o,t({typescript:!0})]})});
