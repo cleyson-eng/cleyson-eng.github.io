@@ -378,6 +378,17 @@ footer .aut {
   border: 1px solid rgba(0, 0, 0, 0.4666666667);
 }
 
+.appmain.app800 {
+  margin: 1em calc(50% - 400px);
+  width: 800px;
+}
+
+@media (width < 800px) {
+  .appmain.app800 {
+    margin: 0 0;
+    width: 100%;
+  }
+}
 .appmain.app500 {
   margin: 1em calc(50% - 250px);
   width: 500px;
