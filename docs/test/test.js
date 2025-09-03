@@ -1,0 +1,1 @@
+"use strict";import{message_notify as i}from"../rsc/js/common.js";addEventListener("load",()=>{document.body.querySelectorAll("#toast").forEach((e,t)=>{e.addEventListener("click",n=>{i(t,e.innerHTML,n.clientX,n.clientY,e.innerHTML,void 0,!0)})})});

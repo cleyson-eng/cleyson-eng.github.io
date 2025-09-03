@@ -1,0 +1,15 @@
+.collapsible {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.collapsible.open {
+  max-height: 70px;
+}
+
+.collapsible .clickable {
+  margin: 2px;
+}
+
+/*# sourceMappingURL=app_list.css.map */
