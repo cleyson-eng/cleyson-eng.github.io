@@ -81,6 +81,14 @@ fieldset {
   border: none;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.tm {
+  margin: 0.7em 0;
+}
+
 .twhite h1, .twhite h2, .twhite h3, .twhite h4, .twhite h5, .twhite h6 {
   color: #101010;
 }
@@ -701,5 +709,50 @@ body.tdark {
  * width:100%
  * left:0
  * bottom:0*/
+.ficon {
+  display: inline-block;
+  vertical-align: center;
+  width: 1em;
+  height: 1em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ficon--p-and {
+  background-image: url("/rsc/img/plat/and.png");
+}
+
+.ficon--p-ard {
+  background-image: url("/rsc/img/plat/ard.png");
+}
+
+.ficon--p-asm {
+  background-image: url("/rsc/img/plat/asm.png");
+}
+
+.ficon--p-esp {
+  background-image: url("/rsc/img/plat/esp.png");
+}
+
+.ficon--p-ios {
+  background-image: url("/rsc/img/plat/ios.png");
+}
+
+.ficon--p-lnx {
+  background-image: url("/rsc/img/plat/lnx.png");
+}
+
+.ficon--p-mac {
+  background-image: url("/rsc/img/plat/mac.png");
+}
+
+.ficon--p-win {
+  background-image: url("/rsc/img/plat/win.png");
+}
+
+.ficon--p-xbx {
+  background-image: url("/rsc/img/plat/xbx.png");
+}
 
 /*# sourceMappingURL=common.css.map */

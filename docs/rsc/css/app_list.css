@@ -12,4 +12,84 @@
   margin: 2px;
 }
 
+.tile_app--list {
+  padding: 0 2em;
+}
+
+.tile_app {
+  width: 16.6%;
+  padding: 1em 0.5em;
+  float: left;
+}
+
+.tile_app--contain {
+  width: 100%;
+}
+
+.tile_app--main {
+  width: 100%;
+  padding: 0.5em 1em;
+  border: 1px solid rgba(0, 0, 0, 0.4666666667);
+  border-radius: 0.7em 0.7em 0 0;
+}
+
+.tile_app--main p {
+  margin: 0.5em 0;
+  font-size: 0.8em;
+}
+
+.tile_app--sub {
+  width: 100%;
+  padding: 0.5em 1em;
+  border: 1px solid rgba(0, 0, 0, 0.4666666667);
+  border-top: none;
+  border-radius: 0 0 0.7em 0.7em;
+  text-align: center;
+}
+
+.twhite .tile_app--main {
+  background-color: #ffffff;
+}
+.twhite .tile_app--sub {
+  background-color: #ececec;
+}
+
+.tdark .tile_app--main {
+  background-color: #252525;
+}
+.tdark .tile_app--sub {
+  background-color: #202020;
+}
+
+@media (width < 2000px) {
+  .tile_app {
+    width: 20%;
+  }
+}
+@media (width < 1600px) {
+  .tile_app {
+    width: 25%;
+  }
+}
+@media (width < 1000px) {
+  .tile_app {
+    width: 33%;
+  }
+}
+@media (width < 840px) {
+  .tile_app {
+    width: 50%;
+  }
+}
+@media (width < 670px) {
+  .tile_app {
+    width: 100%;
+  }
+}
+@media (width < 500px) {
+  .tile_app--list {
+    padding: 0;
+  }
+}
+
 /*# sourceMappingURL=app_list.css.map */
