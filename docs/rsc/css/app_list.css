@@ -13,13 +13,15 @@
 }
 
 .tile_app--list {
+  column-count: 6;
+  column-gap: 0;
   padding: 0 2em;
 }
 
 .tile_app {
-  width: 16.6%;
+  width: 100%;
   padding: 1em 0.5em;
-  float: left;
+  break-inside: avoid;
 }
 
 .tile_app--contain {
@@ -62,28 +64,28 @@
 }
 
 @media (width < 2000px) {
-  .tile_app {
-    width: 20%;
+  .tile_app--list {
+    column-count: 5;
   }
 }
 @media (width < 1600px) {
-  .tile_app {
-    width: 25%;
+  .tile_app--list {
+    column-count: 4;
   }
 }
 @media (width < 1000px) {
-  .tile_app {
-    width: 33%;
+  .tile_app--list {
+    column-count: 3;
   }
 }
 @media (width < 840px) {
-  .tile_app {
-    width: 50%;
+  .tile_app--list {
+    column-count: 2;
   }
 }
 @media (width < 670px) {
-  .tile_app {
-    width: 100%;
+  .tile_app--list {
+    column-count: 1;
   }
 }
 @media (width < 500px) {

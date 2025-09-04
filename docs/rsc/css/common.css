@@ -364,6 +364,7 @@ header {
   position: sticky;
   padding-top: 0.4em;
   top: -2px;
+  z-index: 10;
 }
 
 header[stuck] {
@@ -671,6 +672,7 @@ body.tdark {
 }
 
 .popup {
+  z-index: 20;
   position: fixed;
   padding: 0.3em 0.6em;
   backdrop-filter: blur(3px);
